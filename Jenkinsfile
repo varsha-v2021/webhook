@@ -12,20 +12,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Checking Java application'
-                bat 'javac Main.java'
+                bat 'javac App.java'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Executing automated tests'
-                bat 'java Test'
+                echo 'Testing Java application'
+                bat 'java App'
             }
         }
 
         stage('Run Application') {
             steps {
-                bat 'java Main'
+                echo 'Running Java application'
+                bat 'java App'
             }
         }
     }
